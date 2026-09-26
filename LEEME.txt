@@ -1,0 +1,23 @@
+PUNTO CARIBE V2 — SITIO + PANEL EDITORIAL
+
+QUÉ HACE
+- /admin/ abre el panel para crear, editar, revisar y publicar noticias.
+- El editor elige sección, sube imagen, escribe título/resumen/contenido, autor y fecha.
+- Puede marcar una nota como Última Hora o Destacada.
+- Las publicaciones se guardan como contenido y aparecen en la web tras el despliegue.
+- No hace falta editar HTML para publicar.
+
+PUESTA EN LÍNEA GRATIS (recomendada para esta V2)
+1. Crea un repositorio en GitHub y sube TODO el contenido de esta carpeta.
+2. En Netlify, crea un sitio importando ese repositorio.
+3. Netlify detectará netlify.toml y ejecutará: node build.js
+4. En Netlify activa Identity y configura el registro como "Invite only".
+5. Activa Git Gateway.
+6. Invita por correo a cada persona que vaya a publicar.
+7. Cada editor entra a https://TU-SITIO.netlify.app/admin/
+
+IMPORTANTE
+- El archivo admin/config.yml ya está configurado para Git Gateway.
+- El flujo editorial está activado: borrador -> revisión -> publicado.
+- No compartas una sola contraseña; invita a cada editor con su propio usuario.
+- El contenido "Bienvenidos a Punto Caribe" es demostrativo y se puede borrar desde el panel.

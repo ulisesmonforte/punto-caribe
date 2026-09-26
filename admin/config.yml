@@ -1,0 +1,42 @@
+backend:
+  name: git-gateway
+  branch: main
+
+locale: es
+publish_mode: editorial_workflow
+media_folder: "uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "noticias"
+    label: "Noticias"
+    label_singular: "Noticia"
+    folder: "content/noticias"
+    create: true
+    delete: true
+    extension: "json"
+    format: "json"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} — {{category}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Resumen", name: "summary", widget: "text", hint: "Texto corto que aparecerá en la portada." }
+      - label: "Sección"
+        name: "category"
+        widget: "select"
+        options: ["Cancún", "Playa del Carmen", "Isla Mujeres", "Puerto Morelos", "Tulum", "Cozumel", "México", "Mundo", "Entretenimiento", "Deportes", "Virales", "Turismo", "Tendencias", "Cápsulas"]
+      - label: "Tipo de contenido"
+        name: "section"
+        widget: "select"
+        default: "noticias"
+        options:
+          - { label: "Noticia", value: "noticias" }
+          - { label: "Tendencia", value: "tendencias" }
+          - { label: "Cápsula / Video", value: "videos" }
+      - { label: "Imagen principal", name: "image", widget: "image", required: false }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+      - { label: "Autor", name: "author", widget: "string", default: "Redacción Punto Caribe" }
+      - { label: "Fecha y hora", name: "date", widget: "datetime", date_format: "DD/MM/YYYY", time_format: "HH:mm", format: "YYYY-MM-DDTHH:mm:ssZ" }
+      - { label: "Última hora", name: "breaking", widget: "boolean", default: false, required: false }
+      - { label: "Destacada en portada", name: "featured", widget: "boolean", default: false, required: false }
+      - { label: "URL de video", name: "video_url", widget: "string", required: false, hint: "Opcional: pega aquí el enlace del video." }
